@@ -33,8 +33,6 @@ npm start
 
 CRUD SPA for image files using React, TS, Next.js
 
-### Day 1:
-
 **Design:** Notes, sketches, app design (storage needs, components, variable names, etc)
   - Used a pre-existing toy app (not an image manager, but has nav buttons in a header bar) from my personal code as reference for the division of labor and styling
   - Used a palette generator for the color scheme
@@ -42,8 +40,6 @@ CRUD SPA for image files using React, TS, Next.js
   - Friend recommended lucide-react
 
 *Time: ~6 hours*
-
-### Day 2:
 
 **Implementation:** Began with Next.js scaffold (TS, Tailwind, App Router)
   - Decided to stick with simplicity: only use Tailwind

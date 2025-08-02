@@ -1,26 +1,196 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: rgb(248 248 248 / var(--tw-bg-opacity, 1));
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --card-background: #ffffff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-border: #D1D5DB; /* Tailwind gray-300 */
+  --color-text-dark-gray: #474f5b;
+  --color-text-med-gray: #6f747c;
+  --color-text-med-green: #047857; /* Tailwind emerald-700 */
+  --color-text-med-amber: #D97706; /* Tailwind amber-600 */
+  --color-text-dark-amber: #C2410C; /* Tailwind amber-800 */
+  --color-hover-bg: #F9FAFB; /* Tailwind gray-50 */
+  --border-radius-sm: 0.125rem; /* Tailwind rounded-sm */
+  --border-radius-md: 0.375rem; /* Tailwind rounded-md */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
+/* --- BASE STYLING --- */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  margin: 0;
 }
+
+/* --- CONTAINER STYLING --- */
+#app-container {
+  max-width: 80rem; /* ~1280px, similar to max-w-5xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  min-height: 100vh; /* Ensure full viewport height */
+  box-sizing: border-box;
+  background: var(--background); /* Use same background as body */
+}
+
+/* --- HEADINGS STYLING --- */
+h1 {
+  color: var(--color-text-dark-amber);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+
+/* --- IMAGE GRID STYLING --- */
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem; /* gap-10 */
+
+  /* Responsive for small screens and up */
+}
+
+@media (min-width: 640px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- IMAGE CARDS STYLING --- */
+.image-card {
+  background-color: var(--card-background);
+  padding: 1rem;                                   /* p-4 */
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);    /* shadow-sm */
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.image-card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);          /* hover:shadow-md */
+}
+
+.image-card-image-wrapper {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-bottom: 0.75rem;                          /* mb-3 */
+  position: relative;
+}
+
+.image-card-image {
+  object-fit: cover;                               /* object-cover */
+}
+
+.image-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* default colors */
+.image-card-name,
+.image-card-delete-btn {
+  color: var(--color-text-med-amber);
+  transition: color 0.2s ease;
+}
+
+/* change text AND button icon color */
+.image-card-footer:hover .image-card-name,
+.image-card-footer:hover .image-card-delete-btn {
+  color: var(--color-text-dark-amber);
+}
+
+.image-card-delete-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* --- GLOBAL BOX SIZING --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* --- SEARCH STYLING --- */
+.input-base {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  font-size: 0.875rem; /* text-sm */
+  color: var(--color-text-med-gray);
+  background-color: white;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-base::placeholder {
+  color: var(--color-placeholder);
+}
+
+.input-base:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-light);
+}
+
+/* absolute left-3 top-2.5 w-4 h-4 text-[var(--color-icon)] */
+.input-icon {
+  position: absolute;
+  left: 0.75rem; /* 3 */
+  top: 0.625rem; /* 2.5 */
+  width: 1rem; /* 4 */
+  height: 1rem; /* 4 */
+  color: var(--color-text-med-amber);
+}
+
+/* flex flex-col md:flex-row justify-between items-start md:items-center gap-4 */
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .search-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+
+/* --- UPLOAD STYLING --- */
+.image-upload-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-amber-300);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.image-upload-label:hover {
+  background-color: var(--color-hover-bg);
+}
+
+.image-upload-icon {
+  height: 1rem;
+  width: 1rem;
+  color: var(--color-text-med-gray);
+}
+
+.image-upload-text {
+  font-size: 0.875rem; /* text-sm */
+  color: var(--color-text-dark-gray);
+}
+

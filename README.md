@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Image Manager
 
-## Getting Started
+**Assignment:**
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+A designer gives you this mockup. Your objective is to create a React Application (SPA) CRUD app that can do the following:
+- Upload images and store them using an API
+- Search for images by name using an input box and the API
+- List all uploaded images
+- Delete single image
+- Style the page to your liking
+- Your application should be written in TypeScript.
+    - You do not need to worry about authentication or any kind of user management.
+- You are welcome to mock the API or write a real one (Node preferred).
+  - Used mock apis
+- You should only allow images to be uploaded.
+- You may use any kind of state management, or none, if you see fit.
+    - React
+- For scaffolding, feel free to use Next.js or CRA, as we will not judge you on your webpack config.
+    - Next.js
+- You are also welcome to use any UI library, such as AntD, Material UI, etc..
+    - Only Tailwind
+- Your application should not require additional dependencies to be installed on a local machine
+- 
+It should be able to be brought up with the following two (2) commands:
+```
+npm i
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+CRUD SPA for image files using React, TS, Next.js
 
-## Learn More
+### Day 1:
 
-To learn more about Next.js, take a look at the following resources:
+**Design:** Notes, sketches, app design (storage needs, components, variable names, etc)
+  - Used a pre-existing toy app (not an image manager, but has nav buttons in a header bar) from my personal code as reference for the division of labor and styling
+  - Used a palette generator for the color scheme
+  - Used my personal reference material and Google search for syntax/grammar
+  - Friend recommended lucide-react
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*Time: ~6 hours*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Day 2:
 
-## Deploy on Vercel
+**Implementation:** Began with Next.js scaffold (TS, Tailwind, App Router)
+    - Decided to stick with simplicity: only use Tailwind
+    - Turned off AI but kept autocomplete on
+    - Began with updating the default Next.js page consuming a blank ImageManagement container
+    - Make the empty `component` files that I will need and the blank `lin` file that will hold my mock apis
+    - Started with getting basic functionality working in ImageManagement file
+    - Get the mock api functionality working for fetch/upload/delete
+    - Break into components: upload, search, topbar, image card, image grid
+    - Styling styling change my mind styling styling move styling into global
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*Time: ~10 hours*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Documentation/Finishing:** Update this README
+    - Assignment text
+    - Convert my inline comments/notes into AC, steps, etc
+    - Code review and cleanup
+
+*Time: ~3 hours*
+
+---
+
+### Acceptance Criteria
+1. [x] Must start with only commands:
+    ```bash
+    npm i
+    npm start
+    ```
+2. [X] Create/upload new image
+    - [x] Only image files allowed
+    - [X] Sends new image to API: `mockAddImageApi`
+    - [X] Refreshes the page on upload
+3. [X] Fetch all images
+    - [X] API: `actionFetchAllImages`
+    - [X] Populates the landing page
+4. [X] Fetch image by `name`
+    - [X] Sends `name` to API: `actionFetchImageByName`
+5. [X] Delete an image
+   - [X] API: `deleteImage`
+
+### Personal notes:
+
+I hope it was okay for me to use my toy projects as references as I worked on this. I used a lot of boilerplate and defaults, too.
+I think I left some old artifacts in the code that I missed in cleanup but my eyes are tired.
+I left the comments so you can follow my thought processes.
+I didn't get to add as much validation as I normally would, or notifications to the user (upload successful, etc). I would have liked to flesh out the APIs more, maybe make them real endpoints that could be hit but that would have pulled me to create more storage, seed images, etc and that would have taken too muth time.
+I've also never implemented a test suite from scratch and would have enjoyed getting that going.
+I would also spend more time exploring UI libraries to see what I could have used (I'm used to working from prescribed style libaries).
+Thank you for the fun, and realistic, assessment project!
+
+git remote add origin https://github.com/FairyCodeMother/ReactImageManagementToy.git
+git branch -M main
+git push -u origin main

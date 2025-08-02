@@ -88,12 +88,10 @@ CRUD SPA for image files using React, TS, Next.js
 
 I hope it was okay for me to use my toy projects as references as I worked on this. I used a lot of boilerplate and defaults, too.
 I think I left some old artifacts in the code that I missed in cleanup but my eyes are tired.
+
 I left the comments so you can follow my thought processes.
+
 I didn't get to add as much validation as I normally would, or notifications to the user (upload successful, etc). I would have liked to flesh out the APIs more, maybe make them real endpoints that could be hit but that would have pulled me to create more storage, seed images, etc and that would have taken too muth time.
 I've also never implemented a test suite from scratch and would have enjoyed getting that going.
 I would also spend more time exploring UI libraries to see what I could have used (I'm used to working from prescribed style libaries).
 Thank you for the fun, and realistic, assessment project!
-
-git remote add origin https://github.com/FairyCodeMother/ReactImageManagementToy.git
-git branch -M main
-git push -u origin main

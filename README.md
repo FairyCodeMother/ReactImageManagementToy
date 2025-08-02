@@ -46,21 +46,21 @@ CRUD SPA for image files using React, TS, Next.js
 ### Day 2:
 
 **Implementation:** Began with Next.js scaffold (TS, Tailwind, App Router)
-    - Decided to stick with simplicity: only use Tailwind
-    - Turned off AI but kept autocomplete on
-    - Began with updating the default Next.js page consuming a blank ImageManagement container
-    - Make the empty `component` files that I will need and the blank `lin` file that will hold my mock apis
-    - Started with getting basic functionality working in ImageManagement file
-    - Get the mock api functionality working for fetch/upload/delete
-    - Break into components: upload, search, topbar, image card, image grid
-    - Styling styling change my mind styling styling move styling into global
+  - Decided to stick with simplicity: only use Tailwind
+  - Turned off AI but kept autocomplete on
+  - Began with updating the default Next.js page consuming a blank ImageManagement container
+  - Make the empty `component` files that I will need and the blank `lin` file that will hold my mock apis
+  - Started with getting basic functionality working in ImageManagement file
+  - Get the mock api functionality working for fetch/upload/delete
+  - Break into components: upload, search, topbar, image card, image grid
+  - Styling styling change my mind styling styling move styling into global
 
 *Time: ~10 hours*
 
 **Documentation/Finishing:** Update this README
-    - Assignment text
-    - Convert my inline comments/notes into AC, steps, etc
-    - Code review and cleanup
+  - Assignment text
+  - Convert my inline comments/notes into AC, steps, etc
+  - Code review and cleanup
 
 *Time: ~3 hours*
 
